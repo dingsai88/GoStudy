@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 /**
 I.运行源文件:
@@ -62,4 +65,68 @@ func main() {
 	strEquals1 = "xyz2"
 	fmt.Println("赋值判断3 引用类型2:", strEquals1, strEquals3)
 
+	var retMax = max(111, 222)
+	//占位符
+	fmt.Printf("function函数 方法测试 占位符: %d  \n", retMax)
+
+	aSwap, bSwap := swap("Google", "Runoob")
+	fmt.Printf("函数方法返回多个值:  %s %s \n ", aSwap, bSwap)
+
+	fmt.Println("函数 作为实参 开始")
+
+	/* 声明函数变量 */
+	getSquareRoot := func(x float64) float64 {
+		return math.Sqrt(x)
+	}
+
+	/* 使用函数 */
+	fmt.Println("函数 作为实参:", getSquareRoot(9))
+
+	fmt.Println("\n\n 函数 闭包测试 开始")
+
+	/* nextNumber 为一个函数，函数 i 为 0 */
+	nextNumber := getSequence()
+
+	/* 调用 nextNumber 函数，i 变量自增 1 并返回 */
+	fmt.Println(nextNumber())
+	fmt.Println(nextNumber())
+	fmt.Println(nextNumber())
+
+	/* 创建新的函数 nextNumber1，并查看结果 */
+	nextNumber1 := getSequence()
+	fmt.Println(nextNumber1())
+	fmt.Println(nextNumber1())
+	fmt.Println("函数 闭包测试结束 开始 \n\n")
+
+}
+
+/**
+函数方法 返回多个值
+*/
+func swap(x, y string) (string, string) {
+	return y, x
+}
+
+/* 函数返回两个数的最大值 */
+func max(num1, num2 int) int {
+	/* 定义局部变量 */
+	var result int
+
+	if num1 > num2 {
+		result = num1
+	} else {
+		result = num2
+	}
+	return result
+}
+
+/**
+闭包测试
+*/
+func getSequence() func() int {
+	i := 0
+	return func() int {
+		i += 1
+		return i
+	}
 }
