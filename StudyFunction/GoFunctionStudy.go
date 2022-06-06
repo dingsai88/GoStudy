@@ -72,6 +72,17 @@ func main() {
 	}
 
 	fmt.Println(" \n 菲波那切数列 结束 \n\n ")
+
+	var sum int = 17
+	var count int = 5
+	var mean float32
+
+	mean = float32(sum / count)
+	fmt.Println("mean 的值为1: ", mean)
+
+	mean = float32(sum) / float32(count)
+	fmt.Println("mean 的值为2: ", mean)
+
 }
 
 /**
