@@ -63,6 +63,15 @@ func main() {
 	fmt.Println("圆的面积 = ", c1.getArea())
 
 	fmt.Println(" \n 函数闭包 结束 \n\n ")
+
+	fmt.Println(" 菲波那切数列 开始 \n  ")
+
+	var i int
+	for i = 0; i < 10; i++ {
+		fmt.Printf("%d\t", fibonacci(i))
+	}
+
+	fmt.Println(" \n 菲波那切数列 结束 \n\n ")
 }
 
 /**
@@ -71,4 +80,11 @@ func main() {
 func (c Circle) getArea() float64 {
 	//c.radius 即为 Circle 类型对象中的属性
 	return 3.14 * c.radius * c.radius
+}
+
+func fibonacci(n int) int {
+	if n < 2 {
+		return n
+	}
+	return fibonacci(n-2) + fibonacci(n-1)
 }

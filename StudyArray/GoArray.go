@@ -60,6 +60,15 @@ func main() {
 	/* 拷贝 numbers 的内容到 numbers1 */
 	copy(numbers1, numbers)
 	printSlice(numbers1)
+
+	fmt.Printf("\n\n\n\n  Go 语言范围(Range) 开始 \n\n\n\n")
+
+	//遍历
+	var pow = []int{1, 2, 4, 8, 16, 32, 64, 128}
+	for i, v := range pow {
+		fmt.Printf("2**%d = %d\n", i, v)
+	}
+
 }
 
 func printSlice(x []int) {
