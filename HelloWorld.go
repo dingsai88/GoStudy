@@ -5,22 +5,27 @@ import (
 	"math"
 )
 
-/**
+/*
+*
 I.运行源文件:
 go run HelloWorld.go
 
 I.编译成二进制exe：
- go build HelloWorld.go
+
+	go build HelloWorld.go
 
 II.执行编译完的程序:HelloWorld
-
 */
 func main() {
 	//普通打印
-	fmt.Println("Hello, World!")
+	fmt.Println("Hello, World!Hello, World!Hello, World!" +
+		"Hello, World!Hello, World!" +
+		"Hello, World!Hello, World!")
+	var n1 int
+	fmt.Println(n1)
 
 	//占位符测试
-	var stockcode = 1238
+	var stockcode int = 1238
 	var enddate = "2020-12-3144484"
 	var url = "Code=%d&endDate=%s"
 	var target_url = fmt.Sprintf(url, stockcode, enddate)
@@ -100,7 +105,8 @@ func main() {
 
 }
 
-/**
+/*
+*
 函数方法 返回多个值
 */
 func swap(x, y string) (string, string) {
@@ -120,7 +126,8 @@ func max(num1, num2 int) int {
 	return result
 }
 
-/**
+/*
+*
 闭包测试
 */
 func getSequence() func() int {

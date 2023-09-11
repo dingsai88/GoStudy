@@ -37,7 +37,10 @@ func main() {
 	default:
 		grade = "D"
 	}
+	/**
+	  dafdf
 
+	*/
 	switch {
 	case grade == "A":
 		fmt.Printf("优秀!\n")
