@@ -47,7 +47,7 @@ func errorTest(num1, num2 int) int {
 *
 defer延迟 、panic恐慌、recover组合使用
 例子日志:
-panic 恐慌开始
+panic 恐慌开始 相当于throws
 panic 测试 recover函数收到的异常信息:panic 抛出的异常信息
 */
 func recoverExample() {
