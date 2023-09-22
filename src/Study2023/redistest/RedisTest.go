@@ -1,28 +1,28 @@
 package main
 
 import (
-"context"
-"fmt"
-"github.com/go-redis/redis/v8"
+	"context"
+	"fmt"
+	"github.com/go-redis/redis/v8"
 )
 
-/**
+/*
+*
 I.下载
 go get github.com/go-redis/redis/v8
-
- */
+*/
 func main() {
-fmt.Println("开始")
+	fmt.Println("开始")
 	RedisTest1()
 }
 
-func RedisTest1()  {
+func RedisTest1() {
 	ctx := context.Background()
 
 	rdb := redis.NewClient(&redis.Options{
-		Addr:	  "localhost:6379",
+		Addr:     "localhost:6379",
 		Password: "", // no password set
-		DB:		  0,  // use default DB
+		DB:       0,  // use default DB
 	})
 
 	err := rdb.Set(ctx, "key", "value", 0).Err()
@@ -46,14 +46,14 @@ func RedisTest1()  {
 	}
 }
 
-
-/**
+/*
+*
 Cluster集群
- */
-func RedisTest2()  {
+*/
+func RedisTest2() {
 	ctx := context.Background()
 
-	rdb := rdb := redis.NewClusterClient(&redis.ClusterOptions{
+	rdb := redis.NewClusterClient(&redis.ClusterOptions{
 		Addrs: []string{"cc.db.test:16380", "cc.db.test:16380", "cc.db.test:16380", "cc.db.test:16380", "cc.db.test:16380", "cc.db.test:16380"},
 	})
 
