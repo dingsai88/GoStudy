@@ -89,15 +89,3 @@ func jsonResponse(w http.ResponseWriter, data interface{}) {
 	enc.SetIndent("", "  ")
 	enc.Encode(data)
 }
-
-/*
-*
-类型转换
-*/
-func atoi(s string) int {
-	var res int
-	for _, c := range s {
-		res = res*10 + int(c-'0')
-	}
-	return res
-}
